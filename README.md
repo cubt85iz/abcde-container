@@ -33,6 +33,12 @@ Add a line for each optical drive you wish to use for ripping CDs. It will invok
 SUBSYSTEM=="block", KERNEL=="sr0", ENV{ID_CDROM_MEDIA_CD}=="1", PROGRAM="/usr/bin/systemd-escape --template=abcde@.service $env{DEVNAME}", ENV{SYSTEMD_WANTS}+="%c"
 ```
 
+After adding the rule you will need to reload the rules for them to take effect.
+
+```
+udevadm control --reload-rules
+```
+
 ## References
 
 - https://blog.fraggod.net/2015/01/12/starting-systemd-service-instance-for-device-from-udev.html
