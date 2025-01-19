@@ -7,8 +7,6 @@ ENV LANG en_US.utf8
 RUN apt-get install -y abcde atomicparsley cdparanoia eject eyed3 flac glyrc imagemagick lame normalize-audio \
     && apt-get clean
 
-VOLUME /etc/abcde.conf
-
 RUN mkdir /output
 VOLUME /output
 WORKDIR /output
