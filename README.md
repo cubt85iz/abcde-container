@@ -19,6 +19,7 @@ AddDevice=%I:/dev/cdrom
 AutoUpdate=registry
 
 [Service]
+ExecStopPost=eject %I
 Restart=on-failure
 ```
 
