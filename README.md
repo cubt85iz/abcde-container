@@ -20,8 +20,6 @@ AutoUpdate=registry
 
 [Service]
 ExecStopPost=eject %I
-Restart=on-failure
-
 ```
 
 After adding this service, you will need to execute `systemctl --user daemon-reload`.
@@ -38,6 +36,20 @@ After adding the rule you will need to reload the rules for them to take effect.
 
 ```
 udevadm control --reload-rules
+```
+
+## SELinux
+
+Your abcde.conf file that is mounted by the container must be labeled `container_file_t`.
+
+```sh
+sudo chcon -t container_file_t ~/.abcde.conf
+```
+
+Containers must be able to use devices to access the CDROM.
+
+```sh
+sudo setsebool -P container_use_devices 1
 ```
 
 ## References
