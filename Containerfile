@@ -11,4 +11,4 @@ RUN mkdir /output
 VOLUME /output
 WORKDIR /output
 
-ENTRYPOINT ["abcde", "-P"]
+ENTRYPOINT ["abcde", "-p", "-P"]
