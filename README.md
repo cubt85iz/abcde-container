@@ -2,7 +2,7 @@
 
 Container that will rip a CD to the specified host directory.
 
-_~/.config/containers/systemd/abcde@.container_
+_~/.config/containers/systemd/abcde-container@.container_
 
 A sample quadlet file for a container service that will rip the CD in the specified device. This can be invoked manually by specifying `systemctl start abcde@/dev/sr0` or your target optical device.
 

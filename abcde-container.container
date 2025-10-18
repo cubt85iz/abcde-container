@@ -1,0 +1,10 @@
+[Unit]
+Description=Container for processing audio CDs using abcde
+
+[Container]
+ContainerName=%p
+Image=abcde-container.build
+AddDevice=%I:/dev/cdrom
+
+[Service]
+ExecStopPost=eject %I
